@@ -1,4 +1,4 @@
--- Criando a base de dados.
+-- Criando a base de dados
 CREATE DATABASE BibliotecaPublica;
 
 -- DROP DATABASE BibliotecaPublica;
