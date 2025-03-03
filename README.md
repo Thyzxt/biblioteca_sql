@@ -1,6 +1,6 @@
 # SQL
 
-Este repositório fornece uma amostra de trabalhos que concluí usando SQL e inclui o seguinte:
+Este repositório fornece trabalhos que concluí usando SQL:
 
 | Projetos | Descrição | Tópicos |
 | -------- | --------- | ------- |
