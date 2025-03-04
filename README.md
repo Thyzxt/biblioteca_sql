@@ -7,7 +7,7 @@ Este repositório fornece trabalhos que concluí usando SQL:
 
 | <br> [Sistema de gerenciamento de Biblioteca](https://github.com/Thyzxt/portfolio_sql/blob/main/biblioteca.sql) <br> <br> | 
 | ------------ | 
-| <br> **Descrição:** Organização das atividades, gerenciando informações sobre autores, empréstimos, membros e livros. <br> <br> |
+| <br> **Descrição:** Organização das atividades, gerenciando informações sobre autores, empréstimos, membros e livros. . . . <br> <br> |
 | <br> **Tópicos:** Manipulação e agregação de dados, e filtragem de informações. <br> <br> |
 
 <br> <br>
