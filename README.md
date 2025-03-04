@@ -13,7 +13,7 @@ Este repositório fornece trabalhos que concluí usando SQL:
 
 <br> <br>
 
-| [Sistema de gerenciamento de Hotel](https://github.com/Thyzxt/portfolio_sql/blob/main/hotel.sql) | 
+| <br> [Sistema de gerenciamento de Hotel](https://github.com/Thyzxt/portfolio_sql/blob/main/hotel.sql) <br> <br> | 
 | :------------: | 
 | <br> Controle de dados em um hotel sobre hóspedes, acomodações, reservas, serviços consumidos e formas de pagamento. <br> <br> |
 | <br> Inserção de dados, consultas SQL, atualizações de dados, e filtragem e ordenação de informações. <br> <br> |
