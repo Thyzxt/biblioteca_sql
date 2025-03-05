@@ -161,14 +161,6 @@ SELECT Titulo
 FROM Livro
 WHERE Id NOT IN (SELECT LivroId FROM Emprestimo);
 
--- Mudando a data de devolução real de todos os empréstimos para a data atual
-UPDATE Emprestimo
-SET DtaDevolucao = CURDATE();
-
--- Excluindo todos os membros que nunca fizeram empréstimo
-DELETE FROM Membro
-WHERE Id NOT IN (SELECT DISTINCT MembroId FROM Emprestimo);
-
 -- Listando o título do livro e o nome do autor para todos os livros cadastrados na base
 SELECT L.Titulo, A.Nome
 FROM Livro L
@@ -218,20 +210,20 @@ FROM Emprestimo
 WHERE YEAR(DtaEmprestimo) = YEAR(CURDATE()) - 1;
 
 -- Listando o nome da categoria e a quantidade de livros por categoria
-SELECT C.Genero, COUNT(L.Id)
+SELECT C.Genero, COUNT(L.Id) AS QtdLivros
 FROM Categoria C 
 INNER JOIN Livro L 
 ON C.Id = L.Categoria
 GROUP BY C.Id;
 
 -- Listando o título do livro e o nome do membro de todos os livros emprestados na semana corrente, agrupados e ordenados por data de empréstimo
-SELECT L.Titulo, M.Nome
+SELECT L.Titulo, M.Nome, E.DtaEmprestimo
 FROM Emprestimo E
 INNER JOIN Membro M 
 ON E.MembroId = M.Id
 INNER JOIN Livro L 
 ON E.LivroId = L.Id
-WHERE E.DtaEmprestimo >= CURDATE() - INTERVAL 7 DAY 
+WHERE YEARWEEK(E.DtaEmprestimo, 1) = YEARWEEK(CURDATE(), 1)
 ORDER BY E.DtaEmprestimo;
 
 -- Listando o total de livros emprestados no ano atual, agrupados e ordenados cronologicamente por mês, sendo que o nome do mês deve ser apresentado por extenso
@@ -242,3 +234,11 @@ WHERE YEAR(E.DtaEmprestimo) = YEAR(CURDATE())
 GROUP BY MONTH(E.DtaEmprestimo),
 MONTHNAME(E.DtaEmprestimo)
 ORDER BY MONTH(E.DtaEmprestimo);
+
+-- Mudando a data de devolução real de todos os empréstimos para a data atual
+UPDATE Emprestimo
+SET DtaDevolucao = CURDATE();
+
+-- Excluindo todos os membros que nunca fizeram empréstimo
+DELETE FROM Membro
+WHERE Id NOT IN (SELECT DISTINCT MembroId FROM Emprestimo);
